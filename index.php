@@ -11,7 +11,7 @@ function ServiceHandler() {
 
 $app = new \Slim\App;
 
-$app->get('/', 'ServiceHandler');
+$app->get('/customers', 'ServiceHandler');
 $app->post('/', 'ServiceHandler');
 
 $app->run();
