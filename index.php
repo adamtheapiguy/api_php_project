@@ -11,7 +11,10 @@ function ServiceHandler($id) {
 
 $app = new \Slim\App;
 
-$app->get('/customers/{id:[0-9]+}', 'ServiceHandler');
+$app->get('/customers/{id:[0-9]+}', function ($request, $response, $args) {
+    $data->Output = "Hello World!" . "test" . $args['id'];
+    return json_encode($data);
+});
 $app->post('/customers/:id', 'ServiceHandler');
 
 $app->run();
